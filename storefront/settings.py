@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework', 'accounts','rest_framework.authtoken','ecommerce',
+    'rest_framework_simplejwt'
 ]
 
 MIDDLEWARE = [
@@ -83,8 +84,8 @@ DATABASES = {
         'NAME': 'ecommerce',
         'USER': 'postgres',
         'PASSWORD': 'new_password',
-        'HOST': 'localhost',  # Or the IP address of your PostgreSQL server
-        'PORT': '5432',       # Or the port PostgreSQL is running on
+        'HOST': 'localhost', 
+        'PORT': '5432',       
     }
 }
 

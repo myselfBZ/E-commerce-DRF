@@ -19,7 +19,6 @@ def sign_up(request):
         user.set_password(request.data['password'])
         user.save()
         customuser = CustomUser.objects.create(user=user)
-        print(customuser)
         cart = Cart.objects.create(user=customuser)
         return Response({"user":sreialized.data, "token":token.key})
     

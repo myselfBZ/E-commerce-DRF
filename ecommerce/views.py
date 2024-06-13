@@ -115,12 +115,8 @@ class CartAPIView(APIView):
 def getYourLikedProducts(request:HttpRequest):
      user = request.user
      likes = user.like_set.all()
-     products = []
-
-     for like in likes:
-         products.append(like.product)
     
-     product_serializer = ProductSerializer(products, many=True)
+     product_serializer = ProductSerializer(likes, many=True)
      return Response(product_serializer.data)
     
 @api_view(["GET"])
